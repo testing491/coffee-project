@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: coffee_project_production
-  username: coffee_project
-  password: <%= ENV['COFFEE_PROJECT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
