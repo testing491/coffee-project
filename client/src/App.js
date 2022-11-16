@@ -11,12 +11,18 @@ function App() {
       .then((data) => setCount(data.count));
   }, []);
 
+  useEffect(() => {
+    fetch("/coffees")
+    .then(response => response.json())
+    .then(coffeeData => console.log(coffeeData))
+  })
+
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/coffee_list">
+            <h1>Coffee List:</h1>
           </Route>
           <Route path="/">
             <h1>Page Count: {count}</h1>
